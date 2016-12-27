@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     static {
@@ -122,17 +124,22 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             Intent _intent = new Intent(this,BezierActivity.class);
             this.startActivity(_intent);
-            this.finish();
+//            this.finish();
             return true;
         }else if (id == R.id.action_morph){
             Intent _intent = new Intent(this,PathMorphActivity.class);
             this.startActivity(_intent);
-            this.finish();
+//            this.finish();
             return true;
         } else if (id == R.id.action_meature) {
             Intent _intent = new Intent(this, PathMeatureActivity.class);
             this.startActivity(_intent);
-            this.finish();
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_draggable) {
+            Intent _intent = new Intent(this, DragViewHelperActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
             return true;
         }
 

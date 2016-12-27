@@ -261,3 +261,147 @@ PathMeasure 可以用来测量并提供Path的相关信息,对于我们实现轨
     pathMeasure.getPosTan(<dist></dist>ance,pos,tan);
 ```
 PathTracingView,PathPaintView 为PathMeasure的应用示例.
+
+## TouchSlop
+TouchSlop是处理触摸事件中的一个常量，被系统认为滑动和点击事件的临界点。
+
+当我们手触摸在屏幕上滑动时，如果滑动距离没有超过touchSlop值的话，android系统本身是不会认为我们在屏幕上做了手势滑动。
+只有当我们在屏幕上的滑动距离超过touchSlop值时，android系统本身才会认为我们做了滑动操作并去响应触摸事件
+不过要注意的是不同的设备，touchSlop的值可能是不同的，一切以函数获取为准：
+```
+ViewConfiguration.get(getContext()).getScaledTouchSlop()
+```
+
+## VelocityTracker
+VelocityTracker是个速度跟踪类，用于跟踪手指滑动的速度，包括x轴方向和y轴方向的速度，如快速滑动或者其他手势操作。
+当我们准备开始跟踪滑动速率时可以使用`obtain()`方法来获取一个`VelocityTracker`的实例，然后在`onTouchEvent`回调函数中，使用`addMovement(MotionEvent)`函数将当前的移动事件传递给`VelocityTracker`对象。
+当我们决定计算当前触摸点的速率时可以调用`computeCurrentVelocity(int units)`函数来计算当前的速度，使用`getXVelocity()` 、`getYVelocity()`函数来获得当前X轴和Y轴的速度。
+```
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        LogUtils.e("onTouchEvent start!!");
+        Log.i(TAG, "ACTION_DOWN");
+        if(null == mVelocityTracker) {
+            mVelocityTracker = VelocityTracker.obtain();
+        }
+        mVelocityTracker.addMovement(event);
+        final VelocityTracker verTracker = mVelocityTracker;
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                //获取第一个触点的id， 此时可能有多个触点，获取其中一个
+                mPointerId = event.getPointerId(0);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //计算瞬时速度
+                verTracker.computeCurrentVelocity(1000, mMaxVelocity);
+                float velocityX = verTracker.getXVelocity(mPointerId);
+                float velocityY = verTracker.getYVelocity(mPointerId);
+                LogUtils.e("velocityX-->" + velocityX);
+                LogUtils.e("velocityY-->"+velocityY);
+                break;
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                releaseVelocityTracker();//释放资源
+                break;
+            default:
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
+    /**
+     * 使用完VelocityTracker，必须释放资源
+     */
+    private void releaseVelocityTracker() {
+        if (mVelocityTracker != null) {
+            mVelocityTracker.clear();
+            mVelocityTracker.recycle();
+            mVelocityTracker = null;
+        }
+    }
+```
+
+## Scroller
+
+
+## DragViewHelper
+`DragViewHelper`是V4包中提供的自定义ViewGroup工具，它提供了简化ViewGroup内子View的拖拽操作和状态跟踪的方法。
+`DragViewHelper`的一般使用方法是自定义父View并在父Layout中实现对子控件的操作控制。
+```java
+/**
+* 第一个参数是父Layout本身，
+* 第二个参数是敏感度，一般就用1.0f表示使用系统的默认值，
+* 最后一个参数是回调
+*/
+mDragger = ViewDragHelper.create(this, 1.0f, new ViewDragHelper.Callback() {
+            /**
+            * 处理子View的捕获，当返回true时，表示子View应当被捕获。此方法可能会被多次调用
+            * child 被触碰的子view，
+            * pointerId 触碰id，用来支持多点触碰
+            */
+            @Override
+            public boolean tryCaptureView(View child, int pointerId){
+                return true;
+            }
+        });
+```
+在这个例子中只实现了必须的`tryCaptureView`方法，其余可以重写的的方法包括：
+
+**限制子View位置的方法：**
+```
+/**
+    * 限制子View的横向移动位置，left和dx表示的是子View希望的移动到的位置，而返回的是实际允许移动到的位置
+    * child 子View
+    * left 子View的新左边缘位置
+    * dx 子View的
+    */
+    @Override
+    public int clampViewPositionHorizontal(View child, int left, int dx){
+        final int leftBound = getPaddingLeft();
+        final int rightBound = getWidth() - mDragView.getWidth() - leftBound;
+        final int newLeft = Math.min(Math.max(left, leftBound), rightBound);
+        return newLeft;
+    }
+
+    /**
+    * 限制子View纵向移动，同横向
+    */
+    @Override
+    public int clampViewPositionVertical(View child, int top, int dy){
+        final int topBound = getPaddingTop();
+        final int bottomBound = getHeight() - mDragView.getHeight() - topBound;
+        final int newTop = Math.min(Math.max(top, topBound), bottomBound);
+        return newTop;
+    }
+
+    /**
+    *
+    */
+    @Override
+    public int getViewHorizontalDragRange(View child) {
+        return super.getViewHorizontalDragRange(child);
+    }
+
+    /**
+    *
+    */
+    @Override
+    public int getViewVerticalDragRange(View child) {
+        return super.getViewVerticalDragRange(child);
+    }
+```
+**当子View重叠时，默认总是Layout中的最上层View被捕捉，使用下面方法可以选中非最上层View**
+```
+    /**
+    * 返回应该被捕捉的子View索引。
+    * index 默认应该被捕捉的子View index。
+    */
+    @Override
+    public int getOrderedChildIndex(int index) {
+        int topIndex = indexOfChild(text3);
+        int indexBottom = indexOfChild(text1);
+        return ((index == topIndex) ? indexBottom : index);
+    }
+```
+
+****
+1、即使在任意拖动后，它的子view依然按照原始的z轴层次排列，也依然初始层次传递触碰事件。

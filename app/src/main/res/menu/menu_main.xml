@@ -17,4 +17,9 @@
         android:orderInCategory="100"
         android:title="@string/action_measure"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_draggable"
+        android:orderInCategory="100"
+        android:title="@string/action_draggable"
+        app:showAsAction="ifRoom"/>
 </menu>

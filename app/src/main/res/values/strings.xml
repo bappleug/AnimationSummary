@@ -3,4 +3,5 @@
   <string name="action_bezier">Bezier</string>
   <string name="action_morph">Morph</string>
   <string name="action_measure">Meature</string>
+  <string name="action_draggable">Draggable</string>
 </resources>
