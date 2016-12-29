@@ -22,4 +22,9 @@
         android:orderInCategory="100"
         android:title="@string/action_draggable"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_scroller"
+        android:orderInCategory="100"
+        android:title="@string/action_scroller"
+        app:showAsAction="ifRoom"/>
 </menu>

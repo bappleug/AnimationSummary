@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".scroller.ScrollerActivity">
+
+    <FrameLayout
+        android:id="@+id/loContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="180dp"
+        android:background="#440000ff">
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="#44ff0000"
+            android:textColor="#ffff00"
+            android:text="I'm the content"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"/>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LayoutParam："/>
+                <TextView
+                    android:id="@+id/btnLPReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnLPSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="WRAP_CONTENT"/>
+            <Button
+                android:id="@+id/btnLPPlusWidth"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="LP width +50"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X pos &amp; width："/>
+                <TextView
+                    android:id="@+id/btnLeftReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnOffsetLeftRight"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:textSize="12dp"
+                android:text="offsetLeftAndRight()\nX +50"/>
+
+            <Button
+                android:id="@+id/btnPostInvalidate"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:textSize="12dp"
+                android:text="postInvalidate()\nX +50"/>
+            <Button
+                android:id="@+id/btnMeasure"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="call measure"/>
+            <Button
+                android:id="@+id/btnRequestLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="call layout"/>
+            <Button
+                android:id="@+id/btnCallInvalidate"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="call Invalidate"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scroll："/>
+                <TextView
+                    android:id="@+id/btnScrollReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnScrollParentX10"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="parent x +50"/>
+            <Button
+                android:id="@+id/btnScrollX10"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="x +50"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Translation："/>
+                <TextView
+                    android:id="@+id/btnTranslationReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnTranslationX"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="x +50"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scale："/>
+                <TextView
+                    android:id="@+id/btnScaleReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnScaleX"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="scale *2"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PaddingMargin："/>
+                <TextView
+                    android:id="@+id/btnPaddingMarginReset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="RESET"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnPadding"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Padding +50"/>
+
+            <Button
+                android:id="@+id/btnMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Margin +50"/>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="180dp"
+        android:padding="8dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvLPType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WRAP_CONTENT"/>
+
+        <TextView
+            android:id="@+id/tvLPWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LP_Width = 0"/>
+
+        <TextView
+            android:id="@+id/tvWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Width = 0" />
+
+        <TextView
+            android:id="@+id/tvMeasuredWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MeasuredWidth = 0" />
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left = 0"/>
+
+        <TextView
+            android:id="@+id/tvX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X = 0"/>
+
+        <TextView
+            android:id="@+id/tvTransX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TransX = 0"/>
+
+        <TextView
+            android:id="@+id/tvScaleWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scale = 1"/>
+
+        <TextView
+            android:id="@+id/tvScrollX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ScrollX = 0"/>
+
+
+        <TextView
+            android:id="@+id/tvMargin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Margin = 0" />
+
+        <TextView
+            android:id="@+id/tvParentPadding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ParentPadding = 0" />
+
+    </LinearLayout>
+</FrameLayout>

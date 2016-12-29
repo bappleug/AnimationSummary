@@ -29,6 +29,12 @@
         <action android:name="android.intent.action.Draggable"/>
       </intent-filter>
     </activity>
+    <activity android:name=".scroller.ScrollerActivity"
+        android:label="View的定位">
+      <intent-filter>
+        <action android:name="android.intent.action.Scroller"/>
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>

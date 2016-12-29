@@ -326,7 +326,7 @@ VelocityTracker是个速度跟踪类，用于跟踪手指滑动的速度，包�
 ## DragViewHelper
 `DragViewHelper`是V4包中提供的自定义ViewGroup工具，它提供了简化ViewGroup内子View的拖拽操作和状态跟踪的方法。
 `DragViewHelper`的一般使用方法是自定义父View并在父Layout中实现对子控件的操作控制。
-```java
+```
 /**
 * 第一个参数是父Layout本身，
 * 第二个参数是敏感度，一般就用1.0f表示使用系统的默认值，

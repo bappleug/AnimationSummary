@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
+import io.amosbake.animationsummary.scroller.ScrollerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -138,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_draggable) {
             Intent _intent = new Intent(this, DragViewHelperActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_scroller) {
+            Intent _intent = new Intent(this, ScrollerActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;
