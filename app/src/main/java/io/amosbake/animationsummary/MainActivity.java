@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
-import io.amosbake.animationsummary.scroller.ScrollerActivity;
+import io.amosbake.animationsummary.scroller.ViewPositionActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 //            this.finish();
             return true;
         } else if (id == R.id.action_scroller) {
-            Intent _intent = new Intent(this, ScrollerActivity.class);
+            Intent _intent = new Intent(this, ViewPositionActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;

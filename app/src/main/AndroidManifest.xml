@@ -30,6 +30,12 @@
       </intent-filter>
     </activity>
     <activity android:name=".scroller.ScrollerActivity"
+        android:label="Scroller的使用">
+      <intent-filter>
+        <action android:name="android.intent.action.Scroller"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".scroller.ViewPositionActivity"
         android:label="View的定位">
       <intent-filter>
         <action android:name="android.intent.action.Scroller"/>
