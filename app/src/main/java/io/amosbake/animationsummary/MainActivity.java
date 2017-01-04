@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
 import io.amosbake.animationsummary.scroller.ViewPositionActivity;
+import io.amosbake.animationsummary.wiget.OvalDrawer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivAnimSearch;
     private ImageView ivAnimStar;
     private ImageView ivAnimFiveStar;
+    private OvalDrawer ivOvalDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,17 @@ public class MainActivity extends AppCompatActivity {
         setupSearchAnim();
         setupPathTrimAnim();
         setupXmlMorphAnim();
+        setupOvalDrawer();
+    }
 
+    private void setupOvalDrawer() {
+        ivOvalDrawer = (OvalDrawer) findViewById(R.id.ivOvalDrawer);
+        findViewById(R.id.btnOvalRotate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ivOvalDrawer.rotate(20f);
+            }
+        });
     }
 
     private void setupXmlMorphAnim() {

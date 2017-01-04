@@ -61,7 +61,7 @@ public class ViewPositionActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_scroller);
+        setContentView(R.layout.activity_view_position);
         ButterKnife.bind(this);
         tvContent = (TextView) loContainer.getChildAt(0);
         lp = (FrameLayout.LayoutParams) tvContent.getLayoutParams();

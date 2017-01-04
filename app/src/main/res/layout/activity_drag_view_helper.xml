@@ -50,70 +50,17 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
+        android:text="I can be captured from top &amp; left edge !"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
-    <TextView
+    <Button
+        android:id="@+id/btnText6"
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
+        android:text="I am a button"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
-
-    <TextView
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:background="#44ff0000"
-        android:text="I hand over the top place to the 1st guy !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
 </io.amosbake.animationsummary.draggviewhelper.DraggableContainerLayout>

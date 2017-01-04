@@ -145,7 +145,16 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/btnOvalRotate"
+            style="@style/demo_style"
+            android:layout_height="200dp">
+            <io.amosbake.animationsummary.wiget.OvalDrawer
+                android:id="@+id/ivOvalDrawer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
 
+        </RelativeLayout>
 
     </LinearLayout>
 

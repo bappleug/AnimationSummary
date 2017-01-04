@@ -24,7 +24,8 @@
     </activity>
     <activity android:name=".PathMeatureActivity">
     </activity>
-    <activity android:name=".draggviewhelper.DragViewHelperActivity">
+    <activity android:name=".draggviewhelper.DragViewHelperActivity"
+        android:label="DragViewHelper的使用">>
       <intent-filter>
         <action android:name="android.intent.action.Draggable"/>
       </intent-filter>
@@ -38,7 +39,20 @@
     <activity android:name=".scroller.ViewPositionActivity"
         android:label="View的定位">
       <intent-filter>
-        <action android:name="android.intent.action.Scroller"/>
+        <action android:name="android.intent.action.ViewPosition"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".coordinatorLayout.CoordinatorActivity"
+        android:label="CoordinatorLayout的使用"
+        android:theme="@style/AppTheme.NoActionBar">
+      <intent-filter>
+        <action android:name="android.intent.action.CoordinatorLayout"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".scenetransition.SceneTransitionActivity"
+        android:label="Scene&amp;Transition">
+      <intent-filter>
+        <action android:name="android.intent.action.SceneTransition"/>
       </intent-filter>
     </activity>
   </application>
