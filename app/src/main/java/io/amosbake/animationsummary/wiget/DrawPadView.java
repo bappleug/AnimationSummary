@@ -8,6 +8,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Interpolator;
 
 /**
  * Author: mopel
@@ -75,4 +76,5 @@ public class DrawPadView extends View {
         }
         return true;
     }
+
 }
