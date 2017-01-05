@@ -5,29 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".scenetransition.SceneTransitionActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".scenetransition.SceneTransitionActivity"
+    android:background="@android:color/holo_orange_light">
+    <LinearLayout
+        android:id="@+id/loTransSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_purple">
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="goScene2Custom"
+            android:text="Trans Custom"/>
+        <TextView
+            android:id="@+id/tvTransition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:text="transition: "/>
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:entries="@array/transitions"
+            android:layout_gravity="right"/>
+    </LinearLayout>
     <Button
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="goScene2Auto"
         android:text="trans Auto"/>
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="goScene2Custom"
-        android:text="Trans Custom"/>
     <TextView
         android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="scene 1"/>
-    <ImageView
-        android:id="@+id/fadeImgScene1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:scaleType="centerInside"
-        android:src="@android:drawable/btn_star_big_on"/>
+        android:text="scene"/>
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="transWithoutSceneAddButton"
+        android:text="trans without scene"/>
 </LinearLayout>

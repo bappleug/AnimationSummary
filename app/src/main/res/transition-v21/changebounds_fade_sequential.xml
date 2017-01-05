@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     android:transitionOrdering="sequential">
-    <fade android:fadingMode="fade_out">
+    <fade android:fadingMode="fade_out"/>
+    <changeBounds>
         <targets>
-            <target android:targetId="@id/fadeImgScene1"/>
+            <target android:targetId="@id/btn1"/>
+            <target android:targetId="@id/btn2"/>
         </targets>
-    </fade>
-    <changeBounds/>
-    <fade android:fadingMode="fade_in">
-        <targets>
-            <target android:targetId="@id/fadeImgScene2"/>
-        </targets>
-    </fade>
+    </changeBounds>
+    <changeBounds>
+        <targets android:excludeName="buttons" />
+    </changeBounds>
+    <fade android:fadingMode="fade_in"/>
 </transitionSet>

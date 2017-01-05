@@ -45,4 +45,5 @@ dependencies {
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile 'com.lexing.common:common:0.3.5'
     compile 'com.lexing.common:lrecyclerview:1.3.2'
+    compile 'com.andkulikov:transitionseverywhere:1.7.0'
 }

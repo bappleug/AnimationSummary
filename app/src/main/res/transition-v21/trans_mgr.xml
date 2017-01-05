@@ -4,4 +4,8 @@
         android:fromScene="@layout/layout_scene1"
         android:toScene="@layout/layout_scene2"
         android:transition="@transition/changebounds_fade_sequential"/>
+    <transition
+        android:fromScene="@layout/layout_scene2"
+        android:toScene="@layout/layout_scene1"
+        android:transition="@transition/changebounds_fade_sequential"/>
 </transitionManager>
