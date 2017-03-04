@@ -55,4 +55,10 @@
         android:layout_height="wrap_content"
         android:onClick="transWithoutSceneAddButton"
         android:text="trans without scene"/>
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="transTranslation"
+        android:text="trans translation"/>
 </LinearLayout>

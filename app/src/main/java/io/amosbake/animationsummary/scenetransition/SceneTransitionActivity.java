@@ -75,8 +75,7 @@ public class SceneTransitionActivity extends AppCompatActivity {
         if(sceneRoot.findViewWithTag(TAG_NEWBUTTON) != null){
             return;
         }
-        Slide slide = new Slide(Gravity.RIGHT);
-        TransitionManager.beginDelayedTransition(sceneRoot, slide);
+        TransitionManager.beginDelayedTransition(sceneRoot, new Slide(Gravity.RIGHT));
         Button button = new Button(this);
         button.setText("New Button，click to remove");
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -93,8 +92,16 @@ public class SceneTransitionActivity extends AppCompatActivity {
     }
 
     void transWithoutSceneRemoveButton(){
-        Slide slide = new Slide(Gravity.RIGHT);
-        TransitionManager.beginDelayedTransition(sceneRoot, slide);
+        TransitionManager.beginDelayedTransition(sceneRoot, new Slide(Gravity.RIGHT));
         sceneRoot.removeView(sceneRoot.findViewWithTag(TAG_NEWBUTTON));
+    }
+
+    void transTranslation(View view){
+        TransitionManager.beginDelayedTransition(sceneRoot, new TranslationTransition(TranslationTransition.TRANSLATION_X));
+        if(findViewById(R.id.btn4).getTranslationX() != 0){
+            findViewById(R.id.btn4).setTranslationX(0);
+        } else {
+            findViewById(R.id.btn4).setTranslationX(100);
+        }
     }
 }

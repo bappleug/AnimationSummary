@@ -133,7 +133,7 @@ public class DraggableContainerLayout extends FlexboxLayout {
              */
             @Override
             public int getOrderedChildIndex(int index) {
-                int[] orderedIndex = {0, 2, 3, 4, 5, 1};
+                int[] orderedIndex = {0, 2, 3, 4, 5, 6, 1};
                 return orderedIndex[index];
             }
 

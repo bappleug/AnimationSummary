@@ -27,4 +27,9 @@ public class DragViewHelperActivity extends AppCompatActivity {
     public void clickBtnText6(){
         Toast.makeText(this, "btn6 clicked", Toast.LENGTH_SHORT).show();
     }
+
+    @OnClick(R.id.btnText7)
+    public void clickBtnText7(){
+        findViewById(R.id.loDragger).requestLayout();
+    }
 }
