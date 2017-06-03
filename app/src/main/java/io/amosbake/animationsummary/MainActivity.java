@@ -12,8 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import io.amosbake.animationsummary.animationmisc.AnimationMiscActivity;
+import io.amosbake.animationsummary.constraintlayouttransition.ConstraintTransitionActivity;
 import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
+import io.amosbake.animationsummary.interpolators.InterpolatorActivity;
+import io.amosbake.animationsummary.layoutanimation_api1.LayoutAnimationActivity;
+import io.amosbake.animationsummary.layouttransition.LayoutTransitionActivity;
+import io.amosbake.animationsummary.recyclerviewanim.RecyclerActivity;
+import io.amosbake.animationsummary.scenetransition.SceneTransitionActivity;
 import io.amosbake.animationsummary.scroller.ViewPositionActivity;
+import io.amosbake.animationsummary.touchdemo.TouchActivity;
+import io.amosbake.animationsummary.twitterslike.TwitterLikeActivity;
 import io.amosbake.animationsummary.wiget.OvalDrawer;
 
 public class MainActivity extends AppCompatActivity {
@@ -154,8 +163,53 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(_intent);
 //            this.finish();
             return true;
-        } else if (id == R.id.action_scroller) {
+        } else if (id == R.id.action_position) {
             Intent _intent = new Intent(this, ViewPositionActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_transition) {
+            Intent _intent = new Intent(this, SceneTransitionActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_touchdemo) {
+            Intent _intent = new Intent(this, TouchActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_likebutton) {
+            Intent _intent = new Intent(this, TwitterLikeActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_constraint_transition) {
+            Intent _intent = new Intent(this, ConstraintTransitionActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_layout_transition) {
+            Intent _intent = new Intent(this, LayoutTransitionActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_recycler_view) {
+            Intent _intent = new Intent(this, RecyclerActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_animation_misc) {
+            Intent _intent = new Intent(this, AnimationMiscActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_layout_animation) {
+            Intent _intent = new Intent(this, LayoutAnimationActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_interpolators) {
+            Intent _intent = new Intent(this, InterpolatorActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;

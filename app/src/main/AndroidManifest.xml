@@ -55,6 +55,54 @@
         <action android:name="android.intent.action.SceneTransition"/>
       </intent-filter>
     </activity>
+    <activity android:name=".touchdemo.TouchActivity"
+        android:label="TouchDemo">
+      <intent-filter>
+        <action android:name="android.intent.action.TouchActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".twitterslike.TwitterLikeActivity"
+        android:label="TwitterLike">
+      <intent-filter>
+        <action android:name="android.intent.action.TwitterLikeActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".constraintlayouttransition.ConstraintTransitionActivity"
+        android:label="ConstraintTransition">
+      <intent-filter>
+        <action android:name="android.intent.action.ConstraintAnimActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".layouttransition.LayoutTransitionActivity"
+        android:label="LayoutTransitionAnim">
+      <intent-filter>
+        <action android:name="android.intent.action.LayoutTransitionActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".recyclerviewanim.RecyclerActivity"
+        android:label="RecyclerViewAnim">
+      <intent-filter>
+        <action android:name="android.intent.action.RecyclerActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".animationmisc.AnimationMiscActivity"
+        android:label="AnimationMisc">
+      <intent-filter>
+        <action android:name="android.intent.action.AnimationMiscActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".layoutanimation_api1.LayoutAnimationActivity"
+        android:label="LayoutAnimation_api1">
+      <intent-filter>
+        <action android:name="android.intent.action.LayoutAnimationActivity"/>
+      </intent-filter>
+    </activity>
+    <activity android:name=".interpolators.InterpolatorActivity"
+        android:label="Interpolators">
+      <intent-filter>
+        <action android:name="android.intent.action.InterpolatorActivity"/>
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>

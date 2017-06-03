@@ -23,8 +23,53 @@
         android:title="@string/action_draggable"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/action_scroller"
+        android:id="@+id/action_position"
         android:orderInCategory="100"
-        android:title="@string/action_scroller"
+        android:title="@string/action_position"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_transition"
+        android:orderInCategory="100"
+        android:title="@string/action_transition"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_touchdemo"
+        android:orderInCategory="100"
+        android:title="@string/action_touchdemo"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_likebutton"
+        android:orderInCategory="100"
+        android:title="@string/action_likebutton"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_constraint_transition"
+        android:orderInCategory="100"
+        android:title="@string/constraint_transition"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_layout_transition"
+        android:orderInCategory="100"
+        android:title="@string/layout_transition"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_recycler_view"
+        android:orderInCategory="100"
+        android:title="@string/recyclerview"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_animation_misc"
+        android:orderInCategory="100"
+        android:title="@string/animationmisc"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_layout_animation"
+        android:orderInCategory="100"
+        android:title="@string/layoutAnimation"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_interpolators"
+        android:orderInCategory="100"
+        android:title="@string/interpolators"
         app:showAsAction="ifRoom"/>
 </menu>

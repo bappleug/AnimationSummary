@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnValueAnimator1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View.Animate()"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="ViewCompat.animate() or View.animate() supports no combined animation nor repeat"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnValueAnimator1"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <View
+                android:id="@+id/vValueAnimator11"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_red_dark"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintLeft_toRightOf="@id/btnValueAnimator1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc1"/>
+
+            <View
+                android:id="@+id/vValueAnimator12"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/holo_red_dark"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc1"
+                app:layout_constraintHorizontal_bias="0.24"
+                app:layout_constraintLeft_toRightOf="@id/btnValueAnimator1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnValueAnimator2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ValueAnimator"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Value range, interpolator and evaluator determines the final value which is provided in updatelistener callback."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnValueAnimator2"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <View
+                android:id="@+id/vValueAnimator2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@android:color/holo_red_dark"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintLeft_toRightOf="@id/btnValueAnimator2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc2"/>
+
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnValueAnimator3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WithTypedEvaluator"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Typed evaluator can manipulate none primitive values such as color, text and so on."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnValueAnimator3"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:id="@+id/vValueAnimator3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#ff0000"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintLeft_toRightOf="@id/btnValueAnimator3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc3"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#ffffff"
+                android:text="a"/>
+
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnObjectAnimator1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="ObjectAnimator makes it easy to modify values within object by setXX() method or by class Property, which avoids update listener callback.
+Using PropertyValueHolder allows to manipulate multiple fields in the object by single animator."
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnObjectAnimator1"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <io.amosbake.animationsummary.animationmisc.DotView
+                android:id="@+id/vObjectAnimator1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintLeft_toRightOf="@id/btnObjectAnimator1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc4"/>
+
+        </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Button
+                android:id="@+id/btnKeyFrame1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ObjectAnimator"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvDesc5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Keyframe can run a sequential animation instead of using multiple animations and animatorSet"
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnKeyFrame1"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <io.amosbake.animationsummary.animationmisc.DotView
+                android:id="@+id/vKeyFrame1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintHorizontal_bias="0.76"
+                app:layout_constraintLeft_toRightOf="@id/btnKeyFrame1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc5"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

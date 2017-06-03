@@ -75,7 +75,7 @@ public class DraggableContainerLayout extends FlexboxLayout {
             public int clampViewPositionHorizontal(View child, int left, int dx) {
                 if (child == text1) {
                     final int leftBound = getPaddingLeft();
-                    final int rightBound = getWidth() - child.getWidth() - leftBound;
+                    final int rightBound = getWidth() - child.getWidth() - leftBound - getPaddingRight();
                     return Math.min(Math.max(left, leftBound), rightBound);
                 }
                 return left;
@@ -133,7 +133,7 @@ public class DraggableContainerLayout extends FlexboxLayout {
              */
             @Override
             public int getOrderedChildIndex(int index) {
-                int[] orderedIndex = {0, 2, 3, 4, 5, 6, 1};
+                int[] orderedIndex = {0, 2, 3, 4, 5, 6, 7, 8, 1};
                 return orderedIndex[index];
             }
 

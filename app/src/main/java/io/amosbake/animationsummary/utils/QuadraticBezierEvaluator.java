@@ -7,10 +7,10 @@ import android.graphics.PointF;
  * Author: mopel
  * Date : 2016/12/23
  */
-public class BezierEvaluator implements TypeEvaluator<PointF> {
+public class QuadraticBezierEvaluator implements TypeEvaluator<PointF> {
     private PointF flagPoint;
 
-    public BezierEvaluator(PointF flagPoint) {
+    public QuadraticBezierEvaluator(PointF flagPoint) {
         this.flagPoint = flagPoint;
     }
 

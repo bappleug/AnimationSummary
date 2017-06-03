@@ -119,13 +119,13 @@
             <Button
                 android:id="@+id/btnScrollParentX10"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="parent x +50"/>
+                android:layout_height="60dp"
+                android:text="parent \nnscrollBy(50dp)"/>
             <Button
                 android:id="@+id/btnScrollX10"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="x +50"/>
+                android:layout_height="60dp"
+                android:text="child \n scrollBy(50dp)"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -144,13 +144,13 @@
                 android:id="@+id/btnX"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="x + 50"/>
+                android:text="setX(+=50)"/>
 
             <Button
                 android:id="@+id/btnTranslationX"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="translation x + 50"/>
+                android:text="setTranslation(+=50)"/>
 
             <Button
                 android:id="@+id/btnTranslateAnimX"
@@ -175,12 +175,12 @@
                 android:id="@+id/btnScaleX12"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="scale * 1.2"/>
+                android:text="setScale(*=1.2)"/>
             <Button
                 android:id="@+id/btnScaleX05"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="scale / 2"/>
+                android:text="setScale(/=2)"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -199,13 +199,13 @@
                 android:id="@+id/btnPadding"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Padding +50"/>
+                android:text="setPadding(+=50,0,0,0)"/>
 
             <Button
                 android:id="@+id/btnMargin"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Margin +50"/>
+                android:text="setMargins(+=50,0,0,0)"/>
 
         </LinearLayout>
     </ScrollView>

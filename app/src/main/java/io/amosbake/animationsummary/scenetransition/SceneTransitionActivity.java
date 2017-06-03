@@ -55,23 +55,23 @@ public class SceneTransitionActivity extends AppCompatActivity {
         transManager.setTransition(scene2, scene1, transSetAll);
     }
 
-    void goScene1Auto(View view){
+    public void goScene1Auto(View view){
         TransitionManager.go(scene1);
     }
 
-    void goScene2Auto(View view){
+    public void goScene2Auto(View view){
         TransitionManager.go(scene2);
     }
 
-    void goScene1Custom(View view){
+    public void goScene1Custom(View view){
         transManager.transitionTo(scene1);
     }
 
-    void goScene2Custom(View view){
+    public void goScene2Custom(View view){
         transManager.transitionTo(scene2);
     }
 
-    void transWithoutSceneAddButton(View view){
+    public void transWithoutSceneAddButton(View view){
         if(sceneRoot.findViewWithTag(TAG_NEWBUTTON) != null){
             return;
         }
@@ -91,12 +91,12 @@ public class SceneTransitionActivity extends AppCompatActivity {
         sceneRoot.addView(button);
     }
 
-    void transWithoutSceneRemoveButton(){
+    public void transWithoutSceneRemoveButton(){
         TransitionManager.beginDelayedTransition(sceneRoot, new Slide(Gravity.RIGHT));
         sceneRoot.removeView(sceneRoot.findViewWithTag(TAG_NEWBUTTON));
     }
 
-    void transTranslation(View view){
+    public void transTranslation(View view){
         TransitionManager.beginDelayedTransition(sceneRoot, new TranslationTransition(TranslationTransition.TRANSLATION_X));
         if(findViewById(R.id.btn4).getTranslationX() != 0){
             findViewById(R.id.btn4).setTranslationX(0);
@@ -104,4 +104,5 @@ public class SceneTransitionActivity extends AppCompatActivity {
             findViewById(R.id.btn4).setTranslationX(100);
         }
     }
+
 }

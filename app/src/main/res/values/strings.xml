@@ -5,4 +5,14 @@
   <string name="action_measure">Meature</string>
   <string name="action_draggable">Draggable</string>
   <string name="action_scroller">Scroller</string>
+  <string name="action_position">Positions</string>
+  <string name="action_transition">TransitionAnim</string>
+    <string name="action_touchdemo">TouchDemo</string>
+    <string name="action_likebutton">LikeButton</string>
+    <string name="constraint_transition">ConstraintTrans</string>
+    <string name="layout_transition">LayoutTrans</string>
+    <string name="recyclerview">RecyclerView</string>
+    <string name="animationmisc">AnimationMisc</string>
+    <string name="layoutAnimation">LayoutAnimation</string>
+    <string name="interpolators">Interpolators</string>
 </resources>

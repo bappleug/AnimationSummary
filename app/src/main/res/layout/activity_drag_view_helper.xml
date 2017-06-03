@@ -15,9 +15,9 @@
         android:gravity="center"
         android:layout_gravity="center"
         android:background="#44ff0000"
-        android:text="I am inside parent layout !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:text="I can't move out of parent layout !"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_margin="10dp"
@@ -25,8 +25,8 @@
         android:gravity="center"
         android:background="#44ff0000"
         android:text="I am above all !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_margin="10dp"
@@ -34,8 +34,8 @@
         android:gravity="center"
         android:background="#44ff0000"
         android:text="I can't be captured !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_margin="10dp"
@@ -43,26 +43,27 @@
         android:gravity="center"
         android:background="#44ff0000"
         android:text="I will hold my position"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:background="#44ff0000"
-        android:text="I can be captured from top &amp; left edge !"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:text="I can be captured from left edge !"
+        android:layout_width="80dp"
+        android:layout_height="80dp"/>
 
     <Button
         android:id="@+id/btnText6"
         android:layout_margin="10dp"
         android:layout_gravity="center"
         android:gravity="center"
+        android:textSize="12dp"
         android:text="I am a draggable button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_width="120dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_width="204dp"
@@ -76,8 +77,9 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:text="call requestLayout()"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:textSize="12dp"
+        android:layout_width="120dp"
+        android:layout_height="80dp"/>
 
     <TextView
         android:layout_width="204dp"
