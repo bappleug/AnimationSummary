@@ -1,5 +1,6 @@
 package io.amosbake.animationsummary.interpolators;
 
+import android.support.animation.SpringAnimation;
 import android.view.animation.Interpolator;
 
 /**
@@ -9,6 +10,7 @@ import android.view.animation.Interpolator;
 public class InterpolatorGuide {
 
     Interpolator mInterpolator;
+    SpringAnimation animation;
     String name;
     String desc;
 
@@ -16,6 +18,10 @@ public class InterpolatorGuide {
         mInterpolator = interpolator;
         name = mInterpolator.getClass().getSimpleName();
         desc = "";
+    }
+
+    public InterpolatorGuide(SpringAnimation animation) {
+        this.animation = animation;
     }
 
     public InterpolatorGuide interpolator(Interpolator interpolator) {

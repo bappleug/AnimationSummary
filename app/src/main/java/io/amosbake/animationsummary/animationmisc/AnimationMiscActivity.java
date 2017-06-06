@@ -13,6 +13,9 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.animation.SpringAnimation;
+import android.support.animation.SpringForce;
+import android.support.annotation.FloatRange;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +26,9 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
@@ -31,6 +37,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.amosbake.animationsummary.R;
+import io.amosbake.animationsummary.interpolators.InterpolatorGuide;
 
 /**
  * Created by Ray on 2017/6/1.
@@ -50,11 +57,19 @@ public class AnimationMiscActivity extends AppCompatActivity {
     DotView mView4;
     @BindView(R.id.vKeyFrame1)
     DotView mView5;
+    @BindView(R.id.vSpringAnimation)
+    SpringButton vSpringAnimation;
+    @BindView(R.id.spStiffness)
+    Spinner spStiffness;
+    @BindView(R.id.spDampingRatio)
+    Spinner spDampingRatio;
     boolean anim1 = true;
     ValueAnimator animator2;
     AnimatorSet animator3;
     ObjectAnimator animator4;
     ObjectAnimator animator5;
+    private SpringAnimation springAnimationX;
+    private SpringAnimation springAnimationY;
 
 
     @Override
@@ -66,7 +81,48 @@ public class AnimationMiscActivity extends AppCompatActivity {
     }
 
     void initAnimation() {
+        final SPItem[] stiffnessArray = new SPItem[]{
+                new SPItem<>(SpringForce.STIFFNESS_VERY_LOW, "STIFFNESS_VERY_LOW"),
+                new SPItem<>(SpringForce.STIFFNESS_LOW, "STIFFNESS_LOW"),
+                new SPItem<>(SpringForce.STIFFNESS_MEDIUM, "STIFFNESS_MEDIUM"),
+                new SPItem<>(SpringForce.STIFFNESS_HIGH, "STIFFNESS_HIGH")};
+        final SPItem[] dampingRatioArray = new SPItem[]{
+                new SPItem<>(SpringForce.DAMPING_RATIO_NO_BOUNCY, "DAMPING_RATIO_NO_BOUNCY"),
+                new SPItem<>(SpringForce.DAMPING_RATIO_LOW_BOUNCY, "DAMPING_RATIO_LOW_BOUNCY"),
+                new SPItem<>(SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY, "DAMPING_RATIO_MEDIUM_BOUNCY"),
+                new SPItem<>(SpringForce.DAMPING_RATIO_HIGH_BOUNCY, "DAMPING_RATIO_HIGH_BOUNCY")};
+        spStiffness.setAdapter(new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                stiffnessArray));
+        spDampingRatio.setAdapter(new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_dropdown_item_1line,
+                dampingRatioArray));
+        spStiffness.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                SPItem<Float> stiffness = stiffnessArray[position];
+                vSpringAnimation.setStiffness(stiffness.value);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spDampingRatio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                SPItem<Float> dampingRatio = dampingRatioArray[position];
+                vSpringAnimation.setDampingRatio(dampingRatio.value);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
 
@@ -98,8 +154,8 @@ public class AnimationMiscActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnValueAnimator2)
-    void anim2(){
-        if(animator2 != null){
+    void anim2() {
+        if (animator2 != null) {
             animator2.cancel();
         }
         animator2 = ValueAnimator.ofFloat(1f, 0f);
@@ -118,8 +174,8 @@ public class AnimationMiscActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnValueAnimator3)
-    void anim3(){
-        if(animator3 != null){
+    void anim3() {
+        if (animator3 != null) {
             animator3.cancel();
         }
         animator3 = new AnimatorSet();
@@ -156,8 +212,8 @@ public class AnimationMiscActivity extends AppCompatActivity {
 
     @TargetApi(21)
     @OnClick(R.id.btnObjectAnimator1)
-    void anim4(){
-        if(animator4 != null){
+    void anim4() {
+        if (animator4 != null) {
             animator4.cancel();
         }
         PropertyValuesHolder radiusHolder = PropertyValuesHolder.ofInt("radius", mView4.getWidth() / 2, 0);
@@ -196,8 +252,8 @@ public class AnimationMiscActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnKeyFrame1)
-    void animateKeyFrame(){
-        if(animator5 != null){
+    void animateKeyFrame() {
+        if (animator5 != null) {
             animator5.cancel();
         }
         Keyframe frame1 = Keyframe.ofInt(0, 0);
@@ -216,5 +272,20 @@ public class AnimationMiscActivity extends AppCompatActivity {
         animator5.setInterpolator(new LinearInterpolator());
         animator5.setDuration(4000);
         animator5.start();
+    }
+
+    private static class SPItem<T> {
+        T value;
+        String name;
+
+        public SPItem(T value, String name) {
+            this.value = value;
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
     }
 }

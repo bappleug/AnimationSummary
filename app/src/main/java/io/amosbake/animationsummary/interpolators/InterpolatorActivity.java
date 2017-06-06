@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cimi.com.easeinterpolator.EaseElasticInInterpolator;
 import io.amosbake.animationsummary.R;
 
 public class InterpolatorActivity extends AppCompatActivity {
@@ -42,10 +43,10 @@ public class InterpolatorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initInterpolators();
         initSpinner();
-        vChart.setInterpolator(new AccelerateInterpolator());
+//        vChart.setInterpolator(new AccelerateInterpolator());
 //        vChart.setInterpolator(new CubicBezierInterpolator(0.58f, 0.8f, 0.74f, 0.8f));
 //        vChart.setInterpolator(new AnticipateOvershootInterpolator());
-        vChart.showAnimChart(1000, true, false);
+//        vChart.showAnimChart(1000, true, false);
 //        vChart.showStaticChart();
     }
 
@@ -76,6 +77,7 @@ public class InterpolatorActivity extends AppCompatActivity {
         mInterpolators.add(new InterpolatorGuide(new AccelerateDecelerateInterpolator()));
         mInterpolators.add(new InterpolatorGuide(new BounceInterpolator()));
         mInterpolators.add(new InterpolatorGuide(new AnticipateInterpolator()));
+        mInterpolators.add(new InterpolatorGuide(new EaseElasticInInterpolator(200)));
     }
 
     void initSpinner(){

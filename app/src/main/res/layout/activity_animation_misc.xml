@@ -215,5 +215,52 @@ Using PropertyValueHolder allows to manipulate multiple fields in the object by 
                 app:layout_constraintBottom_toTopOf="@+id/tvDesc5"/>
 
         </android.support.constraint.ConstraintLayout>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <Spinner
+                android:id="@+id/spStiffness"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/spDampingRatio"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <Spinner
+                android:id="@+id/spDampingRatio"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/spStiffness"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc6"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <io.amosbake.animationsummary.animationmisc.SpringButton
+                android:id="@+id/vSpringAnimation"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toRightOf="@+id/spDampingRatio"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/tvDesc6"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:layout_marginLeft="8dp"/>
+
+            <TextView
+                android:id="@+id/tvDesc6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="SpringAnimation is provided by support library since v25.3.0. It works just like facebook rebound library."
+                android:gravity="start"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vSpringAnimation"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
     </LinearLayout>
 </ScrollView>

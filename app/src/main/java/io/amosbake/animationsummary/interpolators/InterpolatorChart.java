@@ -18,44 +18,44 @@ import android.view.animation.Interpolator;
 
 public class InterpolatorChart extends View {
 
-    private static int PADDING_TOP_DP = 8;
-    private static int PADDING_OTHER_DP = 8;
-    private static int AXIS_COLOR = Color.BLACK;
-    private static int LINE_COLOR = Color.DKGRAY;
-    private static int TEXT_COLOR = Color.BLACK;
-    private static int Y_AXIS_BALL_COLOR = Color.BLUE;
-    private static int LINE_BALL_COLOR = Color.RED;
-    private static int Y_BALL_RADIUS_DP = 8;
-    private static int CURVE_BALL_RADIUS_DP = 1;
-    private static int LINE_BALL_RADIUS_DP = 2;
-    private static int AXIS_WIDTH_DP = 1;
-    private static int LINE_WIDTH_DP = 1;
-    private static int TEXT_SIZE_SP = 14;
-    private static final String Y_AXIS_TEXT = "Y-Axis";
-    private static final String X_AXIS_TEXT = "Time";
+    protected static int PADDING_TOP_DP = 8;
+    protected static int PADDING_OTHER_DP = 8;
+    protected static int AXIS_COLOR = Color.BLACK;
+    protected static int LINE_COLOR = Color.DKGRAY;
+    protected static int TEXT_COLOR = Color.BLACK;
+    protected static int Y_AXIS_BALL_COLOR = Color.BLUE;
+    protected static int LINE_BALL_COLOR = Color.RED;
+    protected static int Y_BALL_RADIUS_DP = 8;
+    protected static int CURVE_BALL_RADIUS_DP = 1;
+    protected static int LINE_BALL_RADIUS_DP = 2;
+    protected static int AXIS_WIDTH_DP = 1;
+    protected static int LINE_WIDTH_DP = 1;
+    protected static int TEXT_SIZE_SP = 14;
+    protected static final String Y_AXIS_TEXT = "Y-Axis";
+    protected static final String X_AXIS_TEXT = "Time";
     private static final Interpolator DEFAULT_INTERPOLATOR = new AccelerateInterpolator();
 
     private Interpolator mInterpolator;
 
-    private Rect mAxisRect;
-    private Paint mAxisPaint;
-    private Paint mLinePaint;
-    private Paint mTextPaint;
-    private Paint mYBallPaint;
-    private Paint mLineBallPaint;
-    private int mWidth;
-    private int mHeight;
-    private int mChartHeight;
-    private int mChartWidth;
-    private int mYAxisTextWidth;
-    private int mTextHeight;
-    private int mPaddingOther;
-    private int mPaddingTop;
-    private float mValue = 0;
-    private float mTime = 0;
-    private boolean showStatic = true;
-    private boolean showSampleDots = false;
-    private boolean showAnimate = false;
+    protected Rect mAxisRect;
+    protected Paint mAxisPaint;
+    protected Paint mLinePaint;
+    protected Paint mTextPaint;
+    protected Paint mYBallPaint;
+    protected Paint mLineBallPaint;
+    protected int mWidth;
+    protected int mHeight;
+    protected int mChartHeight;
+    protected int mChartWidth;
+    protected int mYAxisTextWidth;
+    protected int mTextHeight;
+    protected int mPaddingOther;
+    protected int mPaddingTop;
+    protected float mValue = 0;
+    protected float mTime = 0;
+    protected boolean showStatic = true;
+    protected boolean showSampleDots = false;
+    protected boolean showAnimate = false;
 
     private ValueAnimator mAnimator;
     private int duration;
@@ -110,6 +110,9 @@ public class InterpolatorChart extends View {
     }
 
     public void showAnimChart(final int duration, boolean repeat, boolean showDots){
+        if(mInterpolator == null){
+            return;
+        }
         this.duration = duration;
         this.repeat = repeat;
         this.showDots = showDots;
@@ -247,4 +250,5 @@ public class InterpolatorChart extends View {
             mAnimator.cancel();
         }
     }
+
 }
