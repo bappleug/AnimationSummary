@@ -58,9 +58,9 @@ public class InterpolatorChart extends View {
     protected boolean showAnimate = false;
 
     private ValueAnimator mAnimator;
-    private int duration;
-    private boolean repeat;
-    private boolean showDots;
+    private int duration = 2000;
+    private boolean repeat = true;
+    private boolean showDots = true;
 
     public InterpolatorChart(Context context) {
         super(context);
@@ -102,11 +102,11 @@ public class InterpolatorChart extends View {
     }
 
     public void showAnimChart(){
-        showAnimChart(3000, false, false);
+        showAnimChart(2000, false, false);
     }
 
     public void showAnimateDots(){
-        showAnimChart(3000, false, true);
+        showAnimChart(2000, false, true);
     }
 
     public void showAnimChart(final int duration, boolean repeat, boolean showDots){
@@ -251,4 +251,7 @@ public class InterpolatorChart extends View {
         }
     }
 
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 }

@@ -103,6 +103,12 @@
         <action android:name="android.intent.action.InterpolatorActivity"/>
       </intent-filter>
     </activity>
+    <activity android:name=".ripplennreveal.RippleActivity"
+        android:label="Ripple">
+      <intent-filter>
+        <action android:name="android.intent.action.RippleActivity"/>
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>

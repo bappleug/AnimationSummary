@@ -72,4 +72,9 @@
         android:orderInCategory="100"
         android:title="@string/interpolators"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_ripple_effects"
+        android:orderInCategory="100"
+        android:title="@string/ripple_effects"
+        app:showAsAction="ifRoom"/>
 </menu>

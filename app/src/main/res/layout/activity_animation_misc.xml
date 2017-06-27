@@ -222,7 +222,7 @@ Using PropertyValueHolder allows to manipulate multiple fields in the object by 
 
             <Spinner
                 android:id="@+id/spStiffness"
-                android:layout_width="180dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/spDampingRatio"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -230,7 +230,7 @@ Using PropertyValueHolder allows to manipulate multiple fields in the object by 
 
             <Spinner
                 android:id="@+id/spDampingRatio"
-                android:layout_width="180dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/spStiffness"
                 app:layout_constraintBottom_toTopOf="@+id/tvDesc6"

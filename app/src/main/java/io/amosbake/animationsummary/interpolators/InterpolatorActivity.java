@@ -12,6 +12,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnticipateInterpolator;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.DecelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -43,6 +44,7 @@ public class InterpolatorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         initInterpolators();
         initSpinner();
+        vChart.setDuration(1000);
 //        vChart.setInterpolator(new AccelerateInterpolator());
 //        vChart.setInterpolator(new CubicBezierInterpolator(0.58f, 0.8f, 0.74f, 0.8f));
 //        vChart.setInterpolator(new AnticipateOvershootInterpolator());
@@ -77,6 +79,7 @@ public class InterpolatorActivity extends AppCompatActivity {
         mInterpolators.add(new InterpolatorGuide(new AccelerateDecelerateInterpolator()));
         mInterpolators.add(new InterpolatorGuide(new BounceInterpolator()));
         mInterpolators.add(new InterpolatorGuide(new AnticipateInterpolator()));
+        mInterpolators.add(new InterpolatorGuide(new OvershootInterpolator()));
         mInterpolators.add(new InterpolatorGuide(new EaseElasticInInterpolator(200)));
     }
 

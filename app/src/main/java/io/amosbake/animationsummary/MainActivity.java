@@ -19,6 +19,7 @@ import io.amosbake.animationsummary.interpolators.InterpolatorActivity;
 import io.amosbake.animationsummary.layoutanimation_api1.LayoutAnimationActivity;
 import io.amosbake.animationsummary.layouttransition.LayoutTransitionActivity;
 import io.amosbake.animationsummary.recyclerviewanim.RecyclerActivity;
+import io.amosbake.animationsummary.ripplennreveal.RippleActivity;
 import io.amosbake.animationsummary.scenetransition.SceneTransitionActivity;
 import io.amosbake.animationsummary.scroller.ViewPositionActivity;
 import io.amosbake.animationsummary.touchdemo.TouchActivity;
@@ -210,6 +211,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_interpolators) {
             Intent _intent = new Intent(this, InterpolatorActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        }else if (id == R.id.action_ripple_effects) {
+            Intent _intent = new Intent(this, RippleActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;
