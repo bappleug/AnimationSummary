@@ -6,10 +6,58 @@
               android:orientation="vertical"
               android:padding="8dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The yellow highlight is from colorControlHighlight item in app style definition"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ripple on original button"/>
+
     <RelativeLayout
-        android:id="@+id/rlRipple"
+        android:id="@+id/rlRipple1"
         android:layout_width="match_parent"
         android:layout_height="72dp"
+        android:background="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:background="@drawable/ripple_layout"/>
+        android:focusable="true"
+        android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="ripple on RelativeLayout with background=?android:attr/selectableItemBackground"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlRipple2"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="ripple on RelativeLayout with background=?android:attr/selectableItemBackgroundBorderless"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlRipple3"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@drawable/ripple_layout"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="ripple on RelativeLayout with custom drawable"/>
+    </RelativeLayout>
 </LinearLayout>

@@ -19,6 +19,7 @@ import io.amosbake.animationsummary.interpolators.InterpolatorActivity;
 import io.amosbake.animationsummary.layoutanimation_api1.LayoutAnimationActivity;
 import io.amosbake.animationsummary.layouttransition.LayoutTransitionActivity;
 import io.amosbake.animationsummary.recyclerviewanim.RecyclerActivity;
+import io.amosbake.animationsummary.ripplennreveal.CircularRevealActivity;
 import io.amosbake.animationsummary.ripplennreveal.RippleActivity;
 import io.amosbake.animationsummary.scenetransition.SceneTransitionActivity;
 import io.amosbake.animationsummary.scroller.ViewPositionActivity;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Drawable _drawable = ivAnimFiveStar.getDrawable();
-                if (_drawable instanceof Animatable){
+                if (_drawable instanceof Animatable) {
                     ((Animatable) _drawable).start();
                 }
             }
@@ -82,47 +83,55 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Drawable _drawable = ivAnimStar.getDrawable();
-                if (_drawable instanceof Animatable){
+                if (_drawable instanceof Animatable) {
                     ((Animatable) _drawable).start();
                 }
             }
         });
     }
 
-    /**搜索框收缩动画*/
+    /**
+     * 搜索框收缩动画
+     */
     private void setupSearchAnim() {
         ivAnimSearch = (ImageView) findViewById(R.id.ivAnimSearch);
         findViewById(R.id.btnSearchAnim).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Drawable _drawable = ivAnimSearch.getDrawable();
-                if (_drawable instanceof Animatable){
+                if (_drawable instanceof Animatable) {
                     ((Animatable) _drawable).start();
                 }
             }
         });
     }
-    /**颜色变换动画*/
+
+    /**
+     * 颜色变换动画
+     */
     private void setupColorAnim() {
         ivAnimColor = (ImageView) findViewById(R.id.ivAnimColor);
         findViewById(R.id.btnColorAnim).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Drawable _drawable = ivAnimColor.getDrawable();
-                if (_drawable instanceof Animatable){
+                if (_drawable instanceof Animatable) {
                     ((Animatable) _drawable).start();
                 }
             }
         });
     }
-    /**group translateX 动画*/
+
+    /**
+     * group translateX 动画
+     */
     private void setupTransitionAnim() {
         ivAnimVector = (ImageView) findViewById(R.id.ivAnimVector);
         findViewById(R.id.btnVectorAnim).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Drawable _drawable = ivAnimVector.getDrawable();
-                if (_drawable instanceof Animatable){
+                if (_drawable instanceof Animatable) {
                     ((Animatable) _drawable).start();
                 }
             }
@@ -145,12 +154,12 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent _intent = new Intent(this,BezierActivity.class);
+            Intent _intent = new Intent(this, BezierActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;
-        }else if (id == R.id.action_morph){
-            Intent _intent = new Intent(this,PathMorphActivity.class);
+        } else if (id == R.id.action_morph) {
+            Intent _intent = new Intent(this, PathMorphActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;
@@ -214,8 +223,13 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(_intent);
 //            this.finish();
             return true;
-        }else if (id == R.id.action_ripple_effects) {
+        } else if (id == R.id.action_ripple_effects) {
             Intent _intent = new Intent(this, RippleActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_circular_reveal) {
+            Intent _intent = new Intent(this, CircularRevealActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;

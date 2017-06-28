@@ -14,8 +14,8 @@ import io.amosbake.animationsummary.R;
 
 public class RippleActivity extends AppCompatActivity {
 
-    @BindView(R.id.rlRipple)
-    RelativeLayout relativeLayout;
+    @BindView(R.id.rlRipple1)
+    RelativeLayout relativeLayout1;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -77,4 +77,9 @@
         android:orderInCategory="100"
         android:title="@string/ripple_effects"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_circular_reveal"
+        android:orderInCategory="100"
+        android:title="@string/circular_reveal"
+        app:showAsAction="ifRoom"/>
 </menu>

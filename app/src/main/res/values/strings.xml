@@ -16,4 +16,5 @@
     <string name="layoutAnimation">LayoutAnimation</string>
     <string name="interpolators">Interpolators</string>
     <string name="ripple_effects">RippleEffects</string>
+    <string name="circular_reveal">CircularReveal</string>
 </resources>

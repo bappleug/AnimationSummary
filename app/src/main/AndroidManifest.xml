@@ -109,6 +109,12 @@
         <action android:name="android.intent.action.RippleActivity"/>
       </intent-filter>
     </activity>
+    <activity android:name=".ripplennreveal.CircularRevealActivity"
+        android:label="Reveal">
+      <intent-filter>
+        <action android:name="android.intent.action.CircularRevealActivity"/>
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>
