@@ -1,6 +1,7 @@
 package io.amosbake.animationsummary.interpolators;
 
 import android.os.Bundle;
+import android.support.v4.view.animation.FastOutLinearInInterpolator;
 import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.support.v4.view.animation.PathInterpolatorCompat;
@@ -55,20 +56,20 @@ public class InterpolatorActivity extends AppCompatActivity {
     private void initInterpolators() {
         mInterpolators = new ArrayList<>();
         mInterpolators.add(new InterpolatorGuide(new FastOutSlowInInterpolator())
-                .name("ease in out - Standard curve")
+                .name("ease in out - Standard curve - FastOutSlowInInterpolator")
                 .desc("The standard curve (also referred to as “ease in out”) is the most common easing curve. Elements quickly accelerate and slowly decelerate between on-screen locations. It applies to growing and shrinking material, among other property changes."));
         mInterpolators.add(new InterpolatorGuide(new LinearOutSlowInInterpolator())
-                .name("ease out - Deceleration curve")
+                .name("ease out - Deceleration curve - LinearOutSlowInInterpolator")
                 .desc("Using the deceleration curve (also referred to as “ease out”) elements enter the screen at full velocity and slowly decelerate to a resting point.\n" +
                         "\n" +
                         "During deceleration, elements may scale up either in size (to 100%) or opacity (to 100%). In some cases, when elements enter the screen at 0% opacity, they may slightly shrink from a larger size upon entry."));
-        mInterpolators.add(new InterpolatorGuide(new FastOutSlowInInterpolator())
-                .name("ease in - Acceleration curve")
+        mInterpolators.add(new InterpolatorGuide(new FastOutLinearInInterpolator())
+                .name("ease in - Acceleration curve - FastOutLinearInInterpolator")
                 .desc("Using the acceleration curve (also referred to as “ease in”) elements leave the screen at full velocity. They do not decelerate when off-screen.\n" +
                         "\n" +
                         "They accelerate at the beginning of the animation and may scale down in either size (to 0%) or opacity (to 0%). In some cases, when elements leave the screen at 0% opacity, they may also slightly scale up or down in size."));
         mInterpolators.add(new InterpolatorGuide(PathInterpolatorCompat.create(0.4f, 0, 0.6f, 1))
-                .name("ease in out - Sharp curve")
+                .name("ease in out - Sharp curve - PathInterpolatorCompat.create(0.4f, 0, 0.6f, 1)")
                 .desc("Using the sharp curve (also referred to as “ease in out”) elements quickly accelerate and decelerate. It is used by exiting elements that may return to the screen at any time.\n" +
                         "\n" +
                         "Elements may quickly accelerate from a starting point on-screen, then quickly decelerate in a symmetrical curve to a resting point immediately off-screen. The deceleration is faster than the standard curve since it doesn't follow an exact path to the off-screen point. Elements may return from that point at any time.\n" +

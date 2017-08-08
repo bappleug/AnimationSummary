@@ -34,6 +34,7 @@ public class InterpolatorChart extends View {
     protected static final String Y_AXIS_TEXT = "Y-Axis";
     protected static final String X_AXIS_TEXT = "Time";
     private static final Interpolator DEFAULT_INTERPOLATOR = new AccelerateInterpolator();
+    private static final int HOLD_TIME = 2000;
 
     private Interpolator mInterpolator;
 

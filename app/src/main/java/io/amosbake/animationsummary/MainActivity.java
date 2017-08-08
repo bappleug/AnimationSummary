@@ -18,6 +18,7 @@ import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
 import io.amosbake.animationsummary.interpolators.InterpolatorActivity;
 import io.amosbake.animationsummary.layoutanimation_api1.LayoutAnimationActivity;
 import io.amosbake.animationsummary.layouttransition.LayoutTransitionActivity;
+import io.amosbake.animationsummary.paint.PaintActivity;
 import io.amosbake.animationsummary.recyclerviewanim.RecyclerActivity;
 import io.amosbake.animationsummary.ripplennreveal.CircularRevealActivity;
 import io.amosbake.animationsummary.ripplennreveal.RippleActivity;
@@ -230,6 +231,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_circular_reveal) {
             Intent _intent = new Intent(this, CircularRevealActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_paint) {
+            Intent _intent = new Intent(this, PaintActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;

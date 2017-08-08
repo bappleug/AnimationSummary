@@ -17,4 +17,5 @@
     <string name="interpolators">Interpolators</string>
     <string name="ripple_effects">RippleEffects</string>
     <string name="circular_reveal">CircularReveal</string>
+    <string name="paint">Paint</string>
 </resources>
