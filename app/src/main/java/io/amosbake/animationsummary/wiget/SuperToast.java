@@ -32,7 +32,7 @@ import java.util.Date;
 import io.amosbake.animationsummary.R;
 
 /**
- * Do Good App
+ * Do Good io.amosbake.animationsummary.App
  * 项目名称：MyApplication
  * 类描述：超级自定义的Toast,单例模式获取本类
  * 创建人：likh

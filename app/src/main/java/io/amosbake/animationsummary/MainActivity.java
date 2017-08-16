@@ -14,6 +14,7 @@ import android.widget.ImageView;
 
 import io.amosbake.animationsummary.animationmisc.AnimationMiscActivity;
 import io.amosbake.animationsummary.constraintlayouttransition.ConstraintTransitionActivity;
+import io.amosbake.animationsummary.coordinatorLayout.CoordinatorActivity;
 import io.amosbake.animationsummary.draggviewhelper.DragViewHelperActivity;
 import io.amosbake.animationsummary.interpolators.InterpolatorActivity;
 import io.amosbake.animationsummary.layoutanimation_api1.LayoutAnimationActivity;
@@ -236,6 +237,11 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_paint) {
             Intent _intent = new Intent(this, PaintActivity.class);
+            this.startActivity(_intent);
+//            this.finish();
+            return true;
+        } else if (id == R.id.action_coordinator) {
+            Intent _intent = new Intent(this, CoordinatorActivity.class);
             this.startActivity(_intent);
 //            this.finish();
             return true;

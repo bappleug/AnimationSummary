@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.ViewGroup;
 
 import butterknife.BindView;
@@ -29,8 +30,13 @@ public class CoordinatorActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coordinator_layout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+
+
         loTab.setupWithViewPager(viewPager);
+        viewPager.setOffscreenPageLimit(2);
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager()));
     }
 
@@ -42,12 +48,16 @@ public class CoordinatorActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            return RecyclerFragment.instantiate(CoordinatorActivity.this, "recyclerFragment");
+            return super.instantiateItem(container, position);
         }
 
         @Override
         public Fragment getItem(int position) {
-            return new RecyclerFragment();
+            RecyclerFragment fragment = new RecyclerFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("index", position);
+            fragment.setArguments(bundle);
+            return fragment;
         }
 
         @Override

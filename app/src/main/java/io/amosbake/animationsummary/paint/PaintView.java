@@ -103,19 +103,45 @@ public class PaintView extends View {
     }
 
     private void drawSrc(Canvas canvas, Paint paint) {
+        if(drawHandler != null){
+            drawHandler.drawSrc(canvas);
+            return;
+        }
         canvas.drawRect(dip2px(20), dip2px(60), dip2px(20 + 60), dip2px(60 + 60), paint);
     }
 
     private void drawDest(Canvas canvas, Paint paint) {
+        if(drawHandler != null){
+            drawHandler.drawDest(canvas);
+            return;
+        }
         canvas.drawCircle(dip2px(20 + 60), dip2px(60), dip2px(30), paint);
     }
 
     public void setXferMode(PorterDuffXfermode xfermode) {
         this.xfermode = xfermode;
+        bitmapSrc.recycle();
+        bitmapDst.recycle();
+        bitmapSrc = Bitmap.createBitmap(mixWidth / 2, getHeight() - mixHeight, Bitmap.Config.ARGB_8888);
+        bitmapDst = Bitmap.createBitmap(getWidth() - mixWidth / 2, getHeight() - mixHeight, Bitmap.Config.ARGB_8888);
+        canvasSrc.setBitmap(bitmapSrc);
+        canvasDst.setBitmap(bitmapDst);
         invalidate();
     }
 
     private float dip2px(int dip) {
         return DensityUtils.dip2px(getContext(), dip);
+    }
+
+    private DrawHandler drawHandler;
+
+    public interface DrawHandler{
+        void drawSrc(Canvas canvas);
+
+        void drawDest(Canvas canvas);
+    }
+
+    public void setDrawHandler(DrawHandler drawHandler) {
+        this.drawHandler = drawHandler;
     }
 }

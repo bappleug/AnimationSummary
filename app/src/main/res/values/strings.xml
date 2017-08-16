@@ -18,4 +18,5 @@
     <string name="ripple_effects">RippleEffects</string>
     <string name="circular_reveal">CircularReveal</string>
     <string name="paint">Paint</string>
+    <string name="coordinator">Coordinator</string>
 </resources>

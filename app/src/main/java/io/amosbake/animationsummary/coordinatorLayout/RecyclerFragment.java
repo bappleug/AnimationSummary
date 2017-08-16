@@ -26,25 +26,26 @@ import io.amosbake.animationsummary.R;
 public class RecyclerFragment extends Fragment {
 
     RecyclerView mRecyclerView;
-    private static final String KEY="key";
-    private String title="测试";
+    private static final String KEY = "key";
+    private String title = "测试";
 
-    List<String> mDatas=new ArrayList<>();
+    List<String> mDatas = new ArrayList<>();
     private BaseRecyclerAdapter mAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_recyclerview, container);
+        View root = inflater.inflate(R.layout.fragment_recyclerview, container, false);
+        int index = getArguments().getInt("index");
         mRecyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
-
+        mRecyclerView.setBackgroundColor(0xff777777 | (0xff << (index * 8)));
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(),
                 LinearLayoutManager.VERTICAL);
         mRecyclerView.addItemDecoration(itemDecoration);
         mRecyclerView.setLayoutManager(layoutManager);
 
-        for(int i=0;i<30;i++){
+        for (int i = 0; i < 30; i++) {
             String s = String.format("我是第%d个" + title, i);
             mDatas.add(s);
         }
@@ -54,7 +55,7 @@ public class RecyclerFragment extends Fragment {
         return root;
     }
 
-    private class ItemAdapter extends BaseRecyclerAdapter<String>{
+    private class ItemAdapter extends BaseRecyclerAdapter<String> {
 
         ItemAdapter(RecyclerView v, Collection<String> datas, int itemLayoutId) {
             super(v, datas, itemLayoutId);
@@ -62,6 +63,11 @@ public class RecyclerFragment extends Fragment {
 
         @Override
         protected void convert(RecyclerHolder holder, String item, int position, boolean isScrolling) {
+            holder.setText(android.R.id.text1, item);
+        }
+
+        @Override
+        protected void convert(RecyclerHolder holder, String item, int position, boolean isScrolling, List<Object> payloads) {
             holder.setText(android.R.id.text1, item);
         }
     }

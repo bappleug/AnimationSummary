@@ -87,4 +87,9 @@
         android:orderInCategory="100"
         android:title="@string/paint"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_coordinator"
+        android:orderInCategory="100"
+        android:title="@string/coordinator"
+        app:showAsAction="ifRoom"/>
 </menu>
